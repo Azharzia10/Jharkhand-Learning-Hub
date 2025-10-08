@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRAGATI PORTAL - Announcements</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <div class="logo-section">
+                <div class="logo">
+                    <h1>PRAGATI PORTAL</h1>
+                    <p class="tagline">JHARKHAND'S LEARNING HUB</p>
+                </div>
+            </div>
+
+            <ul class="nav-links">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">
+                        <i class="fas fa-home"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="teachers.html" class="nav-link">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                        <span>Manage Teachers</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="timetable.html" class="nav-link">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>AI Timetable</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="attendance.html" class="nav-link">
+                        <i class="fas fa-clipboard-check"></i>
+                        <span>Attendance Record</span>
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a href="announcements.html" class="nav-link">
+                        <i class="fas fa-bullhorn"></i>
+                        <span>Announcements</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="header">
+                <div class="header-left">
+                    <h2>Announcements</h2>
+                    <p>Important updates and notifications for students and staff</p>
+                </div>
+                <div class="header-right">
+                    <button class="btn-primary" onclick="openAnnouncementModal()">
+                        <i class="fas fa-plus"></i>
+                        New Announcement
+                    </button>
+                    <div class="user-profile">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Admin">
+                        <span>Admin User</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Announcements List -->
+            <div class="announcements-grid">
+                <div class="announcement-card important">
+                    <div class="announcement-header">
+                        <div class="announcement-badge">
+                            <i class="fas fa-exclamation-circle"></i>
+                            Important
+                        </div>
+                        <div class="announcement-date">07 Oct 2025</div>
+                    </div>
+                    <h3>Annual Sports Day 2025</h3>
+                    <p>We are excited to announce our Annual Sports Day will be held on October 20th, 2025. All students are encouraged to participate in various sports activities. Practice sessions will begin from next week.</p>
+                    <div class="announcement-footer">
+                        <div class="announcement-author">
+                            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Principal">
+                            <span>Principal's Office</span>
+                        </div>
+                        <div class="announcement-actions">
+                            <button class="btn-icon">
+                                <i class="fas fa-share-alt"></i>
+                            </button>
+                            <button class="btn-icon">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="announcement-card">
+                    <div class="announcement

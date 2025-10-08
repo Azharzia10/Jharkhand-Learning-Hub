@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pragati Portal – Jharkhand’s Learning Hub</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(to bottom, #fdfaf2, #f3efe2);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .login-container {
+      background: #fff;
+      border: 1px solid #d8e2dc;
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      padding: 40px;
+      width: 320px;
+      text-align: center;
+    }
+
+    .login-container img {
+      height: 80px;
+      margin-bottom: 10px;
+    }
+
+    .login-container h1 {
+      font-size: 1.3rem;
+      color: #3a5a40;
+      margin-bottom: 8px;
+    }
+
+    .login-container p {
+      font-size: 0.9rem;
+      color: #5b7553;
+      margin-bottom: 25px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccd5ae;
+      border-radius: 10px;
+      outline: none;
+    }
+
+    button {
+      width: 100%;
+      background-color: #3a5a40;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #2b4633;
+    }
+
+    .register-link {
+      font-size: 0.85rem;
+      color: #5b7553;
+      margin-top: 10px;
+      display: block;
+    }
+
+    footer {
+      font-size: 0.8rem;
+      color: #5b7553;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <img src="assets/pragati_portal_logo.png" alt="Pragati Portal Logo" />
+    <h1>Pragati Portal</h1>
+    <p>Jharkhand’s Learning Hub</p>
+    <form id="loginForm">
+      <input type="text" id="username" placeholder="Username" required />
+      <input type="password" id="password" placeholder="Password" required />
+      <button type="submit">Login</button>
+    </form>
+    <a href="#" class="register-link">New user? Register here</a>
+    <footer>© 2025 Pragati Portal | Jharkhand Govt. Schools</footer>
+  </div>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const user = document.getElementById("username").value;
+      const pass = document.getElementById("password").value;
+
+      // Simple check (replace with real validation later)
+      if (user && pass) {
+        // Redirect to your main homepage
+        window.location.href = "index.html";
+      } else {
+        alert("Please enter valid credentials!");
+      }
+    });
+  </script>
+</body>
+</html>

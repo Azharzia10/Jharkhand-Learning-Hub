@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRAGATI PORTAL - Attendance Record</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <div class="logo-section">
+                <div class="logo">
+                    <h1>PRAGATI PORTAL</h1>
+                    <p class="tagline">JHARKHAND'S LEARNING HUB</p>
+                </div>
+            </div>
+
+            <ul class="nav-links">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">
+                        <i class="fas fa-home"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="teachers.html" class="nav-link">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                        <span>Manage Teachers</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="timetable.html" class="nav-link">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>AI Timetable</span>
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a href="attendance.html" class="nav-link">
+                        <i class="fas fa-clipboard-check"></i>
+                        <span>Attendance Record</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="announcements.html" class="nav-link">
+                        <i class="fas fa-bullhorn"></i>
+                        <span>Announcements</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="header">
+                <div class="header-left">
+                    <h2>Attendance Records</h2>
+                    <p>Track and manage student attendance</p>
+                </div>
+                <div class="header-right">
+                    <button class="btn-primary" onclick="markAttendance()">
+                        <i class="fas fa-check-circle"></i>
+                        Mark Attendance
+                    </button>
+                    <div class="user-profile">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Admin">
+                        <span>Admin User</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Attendance Filters -->
+            <div class="filters-section">
+                <div class="filter-group">
+                    <label>Select Class:</label>
+                    <select id="attendanceClass">
+                        <option value="all">All Classes</option>
+                        <option value="10A">Class 1</option>
+                        <option value="10B">Class 2</option>
+                        <option value="11A">Class 3</option>
+                        <option value="11B">Class 4</option>
+                         <option value="11B">Class 5</option>
+                          <option value="11B">Class 6</option>
+                         <option value="11B">Class 7</option>
+                          <option value="11B">Class 8</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Select Date:</label>
+                    <input type="date" id="attendanceDate" value="2025-10-07">
+                </div>
+                <div class="filter-group">
+                    <label>Select Month:</label>
+                    <select id="attendanceMonth">
+                        <option value="12">October 2025</option>
+                        <option value="11">November 2025</option>
+                        <option value="10">December 2025</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Attendance Summary -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>87%</h3>
+                        <p>Today's Attendance</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-user-check"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>1,085</h3>
+                        <p>Present Today</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-user-times"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>162</h3>
+                        <p>Absent Today</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>45</h3>
+                        <p>Late Arrivals</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Attendance Table -->
+            <div class="content-card">
+                <div class="table-header">
+                    <h3>Class 1 - Today's Attendance (07 Oct 2025)</h3>
+                    <div class="attendance-actions">
+                        <button class="btn-secondary">
+                            <i class="fas fa-download"></i>
+                            Export
+                        </button>
+                        <button class="btn-primary">
+                            <i class="fas fa-sync"></i>
+                            Refresh
+                        </button>
+                    </div>
+                </div>
+
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Roll No</th>
+                                <th>Student Name</th>
+                                <th>Status</th>
+                                <!-- <th>Check-in Time</th> -->
+                                <th>Parent Contact</th>
+                                <!-- <th>Remarks</th> -->
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>01</td>
+                                <td>
+                                    <div class="student-info">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Student">
+                                        <span>Aarav Sharma</span>
+                                    </div>
+                                </td>
+                                <td><span class="status present">Present</span></td>
+                                <!-- <td>8:05 AM</td> -->
+                                <td>+91 98765 43210</td>
+                                <!-- <td>-</td> -->
+                            </tr>
+                            <tr>
+                                <td>02</td>
+                                <td>
+                                    <div class="student-info">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Student">
+                                        <span>Priya Patel</span>
+                                    </div>
+                                </td>
+                                <td><span class="status present">Present</span></td>
+                                <!-- <td>8:15 AM</td> -->
+                                <td>+91 98765 43211</td>
+                                <!-- <td>Late</td> -->
+                            </tr>
+                            <tr>
+                                <td>03</td>
+                                <td>
+                                    <div class="student-info">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Student">
+                                        <span>Rohan Kumar</span>
+                                    </div>
+                                </td>
+                                <td><span class="status absent">Absent</span></td>
+                                <!-- <td>-</td> -->
+                                <td>+91 98765 43212</td>
+                                <!-- <td>Medical</td> -->
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

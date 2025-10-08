@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRAGATI PORTAL - AI Timetable</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <div class="logo-section">
+                <div class="logo">
+                    <h1>PRAGATI PORTAL</h1>
+                    <p class="tagline">JHARKHAND'S LEARNING HUB</p>
+                </div>
+            </div>
+
+            <ul class="nav-links">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">
+                        <i class="fas fa-home"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="teachers.html" class="nav-link">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                        <span>Manage Teachers</span>
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a href="timetable.html" class="nav-link">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>AI Timetable</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="attendance.html" class="nav-link">
+                        <i class="fas fa-clipboard-check"></i>
+                        <span>Attendance Record</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="announcements.html" class="nav-link">
+                        <i class="fas fa-bullhorn"></i>
+                        <span>Announcements</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="header">
+                <div class="header-left">
+                    <h2>AI Timetable Generator</h2>
+                    <p>Smart timetable scheduling with teacher availability</p>
+                </div>
+                <div class="header-right">
+                    <button class="btn-primary" onclick="generateTimetable()">
+                        <i class="fas fa-magic"></i>
+                        Generate Timetable
+                    </button>
+                    <div class="user-profile">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Admin">
+                        <span>Admin User</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Timetable Controls -->
+            <div class="timetable-controls">
+                <div class="control-group">
+                    <label>Select Class:</label>
+                    <select id="classSelect">
+                        <option value="10A">Class 1</option>
+                        <option value="10B">Class 2</option>
+                        <option value="11A">Class 3</option>
+                        <option value="11B">Class 4</option>
+                         <option value="11B">Class 5</option>
+                          <option value="11B">Class 6</option>
+                         <option value="11B">Class 7</option>
+                          <option value="11B">Class 8</option>
+                    </select>
+                </div>
+                <div class="control-group">
+                    <label>Select Week:</label>
+                    <select id="weekSelect">
+                        <option value="current">Current Week</option>
+                        <option value="next">Next Week</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Timetable Display -->
+            <div class="content-card">
+                <h3>Class 1 - Weekly Timetable</h3>
+                <div class="timetable">
+                    <div class="timetable-header">
+                        <div class="time-slot">Time</div>
+                        <div class="day">Monday</div>
+                        <div class="day">Tuesday</div>
+                        <div class="day">Wednesday</div>
+                        <div class="day">Thursday</div>
+                        <div class="day">Friday</div>
+                        <div class="day">Saturday</div>
+                    </div>
+                    
+                    <div class="timetable-row">
+                        <div class="time-slot">8:00 - 9:00</div>
+                        <div class="subject math">Mathematics<br><small>Dr. Rajesh</small></div>
+                        <div class="subject physics">Physics<br><small>Priya Sharma</small></div>
+                        <div class="subject english">English<br><small>Anita Singh</small></div>
+                        <div class="subject math">Mathematics<br><small>Dr. Rajesh</small></div>
+                        <div class="subject chemistry">Chemistry<br><small>Rohit Verma</small></div>
+                        <div class="subject pe">P.T.<br><small>Sports</small></div>
+                    </div>
+                    
+                    <div class="timetable-row">
+                        <div class="time-slot">9:00 - 10:00</div>
+                        <div class="subject physics">Physics<br><small>Priya Sharma</small></div>
+                        <div class="subject math">Mathematics<br><small>Dr. Rajesh</small></div>
+                        <div class="subject break">BREAK</div>
+                        <div class="subject hindi">Hindi<br><small>Suresh Kumar</small></div>
+                        <div class="subject biology">Biology<br><small>Neha Gupta</small></div>
+                        <div class="subject art">Art<br><small>Creative</small></div>
+                    </div>
+                    
+                    <div class="timetable-row">
+                        <div class="time-slot">10:15 - 11:15</div>
+                        <div class="subject chemistry">Chemistry<br><small>Rohit Verma</small></div>
+                        <div class="subject english">English<br><small>Anita Singh</small></div>
+                        <div class="subject math">Mathematics<br><small>Dr. Rajesh</small></div>
+                        <div class="subject physics">Physics<br><small>Priya Sharma</small></div>
+                        <div class="subject computer">Computer<br><small>IT Lab</small></div>
+                        <div class="subject library">Library<br><small>Reading</small></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Teacher Unavailability -->
+            <div class="content-card">
+                <h3>Teacher Unavailability</h3>
+                <div class="unavailability-list">
+                    <div class="unavailable-item">
+                        <div class="teacher-avatar">
+                            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Teacher">
+                        </div>
+                        <div class="unavailable-info">
+                            <strong>Dr. Rajesh Kumar</strong>
+                            <span>Unavailable: Monday 2:00 PM - 4:00 PM</span>
+                            <small>Medical Appointment</small>
+                        </div>
+                    </div>
+                    <div class="unavailable-item">
+                        <div class="teacher-avatar">
+                            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Teacher">
+                        </div>
+                        <div class="unavailable-info">
+                            <strong>Priya Sharma</strong>
+                            <span>Unavailable: Wednesday All Day</span>
+                            <small>Workshop Training</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
